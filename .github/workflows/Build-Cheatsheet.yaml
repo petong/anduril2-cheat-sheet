@@ -1,0 +1,59 @@
+name: LaTeX to PDF and JPEG
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup LaTeX
+        uses: actions/setup-tex@v2
+
+      - name: Setup ImageMagick
+        run: sudo apt-get install -y imagemagick
+
+      - name: Compile LaTeX to PDF
+        run: |
+          pdflatex cheatsheet.tex
+
+      - name: Convert PDF to JPEG
+        run: |
+          convert -density 300 cheatsheet.pdf -quality 90 cheatsheet.jpg
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.create_tag.outputs.tag_name }}
+          release_name: Release ${{ steps.create_tag.outputs.tag_name }}
+          draft: false
+          prerelease: false
+
+      - name: Upload PDF to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: cheatsheet.pdf
+          asset_name: cheatsheet.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload JPEG to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: cheatsheet.jpg
+          asset_name: cheatsheet.jpg
+          asset_content_type: image/jpeg
