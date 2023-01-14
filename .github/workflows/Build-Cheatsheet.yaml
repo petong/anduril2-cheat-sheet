@@ -20,6 +20,13 @@ jobs:
         run: |
           pdflatex cheatsheet.tex
 
+      - name: Change ImageMagick security policy
+        run: |
+          DQT='"'
+          SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
+          RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
+          sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
+
       - name: Convert PDF to JPEG
         run: |
           convert -density 300 cheatsheet.pdf -quality 90 cheatsheet.jpg
