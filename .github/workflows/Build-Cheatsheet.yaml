@@ -1,7 +1,7 @@
 name: LaTeX to PDF and JPEG
 
 on:
-  create:
+  push:
     tags:
       - '*'
 
@@ -29,7 +29,7 @@ jobs:
 
       - name: Convert PDF to JPEG
         run: |
-          convert -density 300 -quality 90 cheatsheet.pdf cheatsheet.jpeg
+          convert -density 300 -quality 90 cheatsheet.pdf cheatsheet.jpg
 
       - name: Create Release
         id: create_release
