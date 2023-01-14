@@ -29,6 +29,7 @@ jobs:
 
       - name: Convert PDF to JPEG
         run: |
+          ls -l
           convert -density 300 cheatsheet.pdf -quality 90 cheatsheet.jpg
 
       - name: Create Release
