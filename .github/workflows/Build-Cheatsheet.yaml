@@ -13,11 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup LaTeX
-        uses: actions/setup-tex@v2
-
       - name: Setup ImageMagick
-        run: sudo apt-get install -y imagemagick
+        run: sudo apt-get install -y imagemagick texlive-latex-base texlive-fonts-recommended texlive-fonts-extra
 
       - name: Compile LaTeX to PDF
         run: |
