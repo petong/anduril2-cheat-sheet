@@ -1,9 +1,9 @@
 name: LaTeX to PDF and JPEG
 
 on:
-  push:
-    branches:
-      - main
+  create:
+    tags:
+      - '*'
 
 jobs:
   build:
