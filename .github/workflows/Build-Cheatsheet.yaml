@@ -2,6 +2,9 @@ name: LaTeX to PDF and JPEG
 
 on:
   push:
+    branches:
+      - '*'
+      - '!main'
     tags:
       - '*'
 
@@ -14,13 +17,19 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup ImageMagick
+        if: |
+          endsWith(github.event.head_commit.modified, '.tex')
         run: sudo apt-get install -y ghostscript imagemagick texlive-fonts-extra texlive-fonts-recommended texlive-latex-base
 
       - name: Compile LaTeX to PDF
+        if: |
+          endsWith(github.event.head_commit.modified, '.tex')
         run: |
           pdflatex cheatsheet.tex
 
       - name: Change ImageMagick security policy
+        if: |
+          endsWith(github.event.head_commit.modified, '.tex')
         run: |
           DQT='"'
           SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
@@ -28,10 +37,22 @@ jobs:
           sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
 
       - name: Convert PDF to JPEG
+        if: |
+          endsWith(github.event.head_commit.modified, '.tex')
         run: |
           convert -density 300 -quality 90 cheatsheet.pdf cheatsheet.jpg
 
+      - name: Add and Commit files
+        if: startsWith(github.ref, 'refs/heads/') && endsWith(github.event.head_commit.modified, '.tex')
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add cheatsheet.pdf cheatsheet.jpg
+          git commit -m "Add cheatsheet.pdf cheatsheet.jpg"
+          git push origin ${{ github.ref }}
+
       - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -43,6 +64,7 @@ jobs:
           prerelease: false
 
       - name: Upload PDF to Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,6 +75,7 @@ jobs:
           asset_content_type: application/pdf
 
       - name: Upload JPEG to Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
