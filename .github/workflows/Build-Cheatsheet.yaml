@@ -34,6 +34,15 @@ jobs:
         run: |
           convert -density 300 -quality 90 cheatsheet.pdf cheatsheet.jpg
 
+      - name: Add and Commit files
+        if: startsWith(github.ref, 'refs/heads/')
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add cheatsheet.pdf cheatsheet.jpg
+          git commit -m "Add cheatsheet.pdf cheatsheet.jpg"
+          git push origin ${{ github.ref }}
+
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         id: create_release
