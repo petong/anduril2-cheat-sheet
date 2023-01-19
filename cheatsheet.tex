@@ -1,4 +1,4 @@
-\documentclass[10pt,letterpaper]{article}
+\documentclass{article}
 %\documentclass{article}
 \usepackage{geometry}
 \geometry{
@@ -7,7 +7,7 @@
  right=5mm,
  top=15mm,
  bottom=1mm,
- margin=5mm,
+ margin=4mm,
 }
 \usepackage{colortbl}           % For coloured tables
 \usepackage{hhline}             % Border under tables
@@ -38,6 +38,21 @@
 \renewcommand{\familydefault}{\sfdefault}
 \color{TextColor}
 
+% column configuration
+%\setlength{\tabcolsep}{0.1 mm} % Space between columns
+% \setlength{\oddsidemargin}{-0.4in}
+% \setlength{\evensidemargin}{-0.4in}
+%\setlength{\textwidth}{7.3in}
+
+% testing addtolength
+%\addtolength{\oddsidemargin}{-.4in}
+%\addtolength{\evensidemargin}{-.8in}
+%\addtolength{\textwidth}{-0.75in}
+
+%\addtolength{\topmargin}{-.875in}
+%\addtolength{\textheight}{1.75in}
+%
+
 \begin{document}
 
 \begin{center}
@@ -47,9 +62,9 @@
 \begin{multicols*}{3}
 
 % From Off Advanced Mode
-\begin{tabularx}{3.80 cm}{p{0.50 cm} x{3.5 cm} }
+\begin{tabularx}{3.80 cm}{p{0.50 cm} x{4.5 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{2}{x{4.41 cm}}{\bf\textcolor{white}{From Off Advanced Mode}}  \tn
+\mymulticolumn{2}{x{5.41 cm}}{\bf\textcolor{white}{From Off Advanced Mode}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C & On (ramp mode, memorized level) \tn
@@ -108,13 +123,13 @@
 % Row Count 15 (+ 1)
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
-\par\addvspace{3.25 em}
+\par\addvspace{1.25 em}
 
 % Simple UI Ramp Config
 % \begin{tabularx}{3.80 cm}{p{0.50 cm} x{3.5 cm} }
-\begin{tabularx}{4.0 cm}{p{0.10 cm} x{0.75 cm} x{2.70 cm} }
+\begin{tabularx}{4.0 cm}{p{0.10 cm} x{1.75 cm} x{2.70 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{3}{x{4.41 cm}}{\bf\textcolor{white}{Simple UI Ramp Config Menu 7H from Off}}  \tn
+\mymulticolumn{3}{x{5.41 cm}}{\bf\textcolor{white}{Simple UI Ramp 7H from Off}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1 & Floor & default: 20/150 \tn
@@ -136,16 +151,16 @@
 \par\addvspace{1.3em}
 
 % Battery Check Mode
-\begin{tabularx}{3.80 cm}{p{0.50 cm} x{3.5 cm} }
+\begin{tabularx}{3.80 cm}{p{0.50 cm} x{4.5 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{2}{x{4.41 cm}}{\bf\textcolor{white}{Battery Check Mode (3C)}}  \tn
+\mymulticolumn{2}{x{5.41 cm}}{\bf\textcolor{white}{Battery Check Mode (3C)}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C & Off \tn
 % Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
-2C & Next mode (Temp check, Beacon, SOS) \tn
+2C & {Next mode \\ Temp check, Beacon, SOS} \tn
 % Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
@@ -155,17 +170,40 @@
 \end{tabularx}
 \par\addvspace{1.3 em}
 
-\begin{tabularx}{4.0 cm}{p{0.10 cm} x{1.10 cm} x{2.35 cm} }
+\begin{tabularx}{4.0 cm}{p{0.10 cm} x{2.10 cm} x{2.35 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{3}{x{4.41 cm}}{\bf\textcolor{white}{Misc Config 9H from Off}}  \tn
+\mymulticolumn{3}{x{5.41 cm}}{\bf\textcolor{white}{Misc Config 9H from Off}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
-1 & Tint ramp style & {0 = smooth \\ 1 = toggle} \tn
-% Row Count 2 (+ 2)
+1 & Tint ramp & {0 = smooth \\ 1 = toggle} \tn
 % Row 1
 \SetRowColor{white}
-2 & Jump Start level & {1 to 150 \\ between 20 and 50} \tn
+2 & Jump Start & {1 to 150 \\ usually between 20 and 50} \tn
 % Row Count 4 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}---}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+% \begin{tabularx}{4.0 cm}{p{1.55 cm} x{1 cm} x{1 cm} }
+\begin{tabularx}{4.0 cm}{p{1.60 cm} x{0.50 cm} x{2.45 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{3}{x{5.41 cm}}{\bf\textcolor{white}{Blinky Mode 3C from Off}}  \tn
+\SetRowColor{LightBackground}
+Batt & 1C &Off \tn
+\SetRowColor{white}
+Batt & 2C &  Next \tn
+\SetRowColor{LightBackground}
+Batt &7H&Voltage config \tn
+\SetRowColor{white}
+Temp & 1C &Off \tn
+\SetRowColor{LightBackground}
+Temp & 2C &  Next \tn
+\SetRowColor{white}
+Temp &7H&Thermal config \tn
+\SetRowColor{LightBackground}
+  Beacon &1C&Off \tn
+\SetRowColor{white}
+  Beacon &1H &Timing \tn
 \hhline{>{\arrayrulecolor{DarkBackground}}---}
 \end{tabularx}
 \par\addvspace{1.3em}
