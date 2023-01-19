@@ -123,13 +123,13 @@
 % Row Count 15 (+ 1)
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
-\par\addvspace{1.25 em}
+\par\addvspace{3.50 em}
 
 % Simple UI Ramp Config
 % \begin{tabularx}{3.80 cm}{p{0.50 cm} x{3.5 cm} }
 \begin{tabularx}{4.0 cm}{p{0.10 cm} x{1.75 cm} x{2.70 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{3}{x{5.41 cm}}{\bf\textcolor{white}{Simple UI Ramp 7H from Off}}  \tn
+\mymulticolumn{3}{x{5.41 cm}}{\bf\textcolor{white}{Simple UI Ramp 10H from Off}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1 & Floor & default: 20/150 \tn
@@ -153,7 +153,7 @@
 % Battery Check Mode
 \begin{tabularx}{3.80 cm}{p{0.50 cm} x{4.5 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{2}{x{5.41 cm}}{\bf\textcolor{white}{Battery Check Mode (3C)}}  \tn
+\mymulticolumn{2}{x{5.41 cm}}{\bf\textcolor{white}{Battery Check (3C) from Off}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C & Off \tn
@@ -204,6 +204,9 @@ Temp &7H&Thermal config \tn
   Beacon &1C&Off \tn
 \SetRowColor{white}
   Beacon &1H &Timing \tn
+\SetRowColor{LightBackground}
+  \mymulticolumn{3}{x{5.41 cm}}{Temp check -\textgreater{} Beacon -\textgreater{} SOS}  \tn
+
 \hhline{>{\arrayrulecolor{DarkBackground}}---}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -348,9 +351,9 @@ Temp &7H&Thermal config \tn
 \columnbreak
 
 % lockout
-\begin{tabularx}{3.80 cm}{p{1 cm} x{3 cm} }
+\begin{tabularx}{3.80 cm}{p{1 cm} x{4 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{2}{x{4.41 cm}}{\bf\textcolor{white}{Lockout}}  \tn
+\mymulticolumn{2}{x{5.41 cm}}{\bf\textcolor{white}{Lockout}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C/1H & Momentary moon (lowest floor) \tn
@@ -381,12 +384,12 @@ Temp &7H&Thermal config \tn
 % Row 9
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
-\par\addvspace{7 em}
+\par\addvspace{4.65 em}
 
 % Strobe Mode
-\begin{tabularx}{3.80 cm}{p{0.50 cm} x{3.5 cm} }
+\begin{tabularx}{3.80 cm}{p{0.50 cm} x{4.5 cm} }
 \SetRowColor{DarkBackground}
-\mymulticolumn{2}{x{4.41 cm}}{\bf\textcolor{white}{Strobe Mode 3H from Off}}  \tn
+\mymulticolumn{2}{x{5.41 cm}}{\bf\textcolor{white}{Strobe Mode 3H from Off}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C & Turn Off \tn
@@ -409,22 +412,17 @@ Temp &7H&Thermal config \tn
 % Row Count 5 (+ 1)
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \SetRowColor{LightBackground}
-\mymulticolumn{2}{x{4.41 cm}}{Candle -\textgreater{} Bike -\textgreater{} Party -\textgreater{} Tactical -\textgreater{} Lightning}  \tn
+\mymulticolumn{2}{x{5.41 cm}}{Candle -\textgreater{} Bike -\textgreater{} Party -\textgreater{} Tactical -\textgreater{} Lightning}  \tn
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
 \par\addvspace{1.3em}
 
 % Aux Colors
-\begin{tabularx}{4.41 cm}{X}
+\begin{tabularx}{5.41 cm}{X}
 \SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{4.41 cm}}{\bf\textcolor{white}{Aux Colors}}  \tn
-% Row 0
+\mymulticolumn{1}{x{5.41 cm}}{\bf\textcolor{white}{Aux Colors \\ 7H from Off or Lockout}}  \tn
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{4.41 cm}}{7H from Off or Lockout} \tn
-% Row Count 1 (+ 1)
-\hhline{>{\arrayrulecolor{DarkBackground}}-}
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{4.41 cm}}{- Red \newline  - Yellow (Red+Green) \newline  - Green \newline  - Cyan (Green+Blue) \newline  - Blue \newline  - Purple (Blue+Red) \newline  - White (Red+Green+Blue) \newline  - Disco \newline  - Rainbow \newline  - Voltage}  \tn
+\mymulticolumn{1}{x{5.41 cm}}{- Red \newline  - Yellow (Red+Green) \newline  - Green \newline  - Cyan (Green+Blue) \newline  - Blue \newline  - Purple (Blue+Red) \newline  - White (Red+Green+Blue) \newline  - Disco \newline  - Rainbow \newline  - Voltage}  \tn
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
