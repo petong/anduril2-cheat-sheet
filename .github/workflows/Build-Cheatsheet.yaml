@@ -20,14 +20,10 @@ jobs:
         run: sudo apt-get install -y ghostscript imagemagick texlive-fonts-extra texlive-fonts-recommended texlive-latex-base
 
       - name: Compile LaTeX to PDF
-        if: |
-          endsWith(github.event.head_commit.modified, '.tex')
         run: |
           pdflatex cheatsheet.tex
 
       - name: Change ImageMagick security policy
-        if: |
-          endsWith(github.event.head_commit.modified, '.tex')
         run: |
           DQT='"'
           SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
