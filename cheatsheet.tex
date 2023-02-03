@@ -68,62 +68,52 @@
 % Row 0
 \SetRowColor{LightBackground}
 1C & On (ramp mode, memorized level) \tn
-% Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
 1H & On (ramp mode, floor level) \tn
-% Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
 2C & On (ramp mode, ceiling level) \tn
-% Row Count 3 (+ 1)
 % Row 3
 \SetRowColor{white}
 2H & On (momentary turbo) \tn
-% Row Count 4 (+ 1)
 % Row 4
 \SetRowColor{LightBackground}
 3C & Battcheck mode \tn
-% Row Count 5 (+ 1)
 % Row 5
 \SetRowColor{white}
 3H & Strobe mode (whichever was used last) \tn
-% Row Count 7 (+ 2)
 % Row 6
 \SetRowColor{LightBackground}
 4C & Lockout mode \tn
-% Row Count 8 (+ 1)
 % Row 7
 \SetRowColor{white}
 5C & Momentary mode \tn
-% Row Count 9 (+ 1)
 % Row 8
 \SetRowColor{LightBackground}
 7C & Aux LEDs: Next pattern \tn
-% Row Count 10 (+ 1)
 % Row 9
 \SetRowColor{white}
 7H & Aux LEDs: Next color \tn
-% Row Count 11 (+ 1)
 % Row 10
 \SetRowColor{LightBackground}
 9H & Misc config menu (varies per light) \tn
-% Row Count 12 (+ 1)
 % Row 11
 \SetRowColor{white}
-10H & Simple UI Ramp Config Menu \tn
-% Row Count 13 (+ 1)
+10C & Simple UI \tn
 % Row 12
 \SetRowColor{LightBackground}
-13H & Factory reset (on some lights) \tn
-% Row Count 14 (+ 1)
+10H & Simple UI Ramp Config Menu \tn
 % Row 13
 \SetRowColor{white}
+13H & Factory reset (on some lights) \tn
+% Row 14
+\SetRowColor{LightBackground}
 15C & Version check \tn
-% Row Count 15 (+ 1)
+% Row 15
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
-\par\addvspace{3.50 em}
+\par\addvspace{2.25 em}
 
 % Simple UI Ramp Config
 % \begin{tabularx}{3.80 cm}{p{0.50 cm} x{3.5 cm} }
@@ -133,19 +123,16 @@
 % Row 0
 \SetRowColor{LightBackground}
 1 & Floor & default: 20/150 \tn
-% Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
 2 & Ceiling & default: 120/150 \tn
-% Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
 3 & Steps & default: 5 \tn
-% Row Count 3 (+ 1)
 % Row 3
 \SetRowColor{white}
 4 & Turbo Style & {default: 0 \\ no turbo} \tn
-% Row Count 4 (+ 1)
+% Row 4
 \hhline{>{\arrayrulecolor{DarkBackground}}---}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -157,15 +144,13 @@
 % Row 0
 \SetRowColor{LightBackground}
 1C & Off \tn
-% Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
 2C & {Next mode \\ Temp check, Beacon, SOS} \tn
-% Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
 7H & Voltage Config Menu \tn
-% Row Count 3 (+ 1)
+% Row 3
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
 \par\addvspace{1.3 em}
@@ -179,7 +164,7 @@
 % Row 1
 \SetRowColor{white}
 2 & Jump Start & {1 to 150 \\ usually between 20 and 50} \tn
-% Row Count 4 (+ 2)
+% Row 2
 \hhline{>{\arrayrulecolor{DarkBackground}}---}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -241,51 +226,40 @@ Temp &7H&Thermal config \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C & On \tn
-% Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
 1H & Ramp (up, with reversing) \tn
-% Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
 2H & Ramp (down) \tn
-% Row Count 3 (+ 1)
 % Row 3
 \SetRowColor{white}
 2C & Go to/from ceiling or turbo \tn
-% Row Count 4 (+ 1)
 % Row 4
 \SetRowColor{LightBackground}
 3C & Change ramp style (smooth / stepped) \tn
-% Row Count 5 (+ 1)
 % Row 5
 \SetRowColor{white}
 3H & Tint ramping (on some lights) / Momentary turbo (on lights without tint ramping) \tn
-% Row Count 8 (+ 3)
 % Row 6
 \SetRowColor{LightBackground}
 4C & Lockout mode \tn
-% Row Count 9 (+ 1)
 % Row 7
 \SetRowColor{white}
 5C & Momentary mode \tn
-% Row Count 10 (+ 1)
 % Row 8
 \SetRowColor{LightBackground}
 5H & Sunset Timer and Add 5 Mins \tn
-% Row Count 11 (+ 1)
 % Row 9
 \SetRowColor{white}
 7H & {Ramp config menu \\ 1: floor \\ 2: ceiling \\ 3: speed/steps} \tn
-% Row Count 13 (+ 2)
 % Row 10
 \SetRowColor{LightBackground}
 10C & Turn on manual memory and save current brightnes \tn
-% Row Count 15 (+ 2)
 % Row 11
 \SetRowColor{white}
 10H & Ramp Extras config menu \tn
-% Row Count 16 (+ 1)
+% Row 12
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \end{tabularx}
 \par\addvspace{1 em}
@@ -321,7 +295,7 @@ Temp &7H&Thermal config \tn
 % Row 2
 \SetRowColor{LightBackground}
 3 & \# of steps & default:  7 \tn
-% Row Count 3 (+ 1)
+% Row 3
 \hhline{>{\arrayrulecolor{DarkBackground}}---}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -393,23 +367,19 @@ Temp &7H&Thermal config \tn
 % Row 0
 \SetRowColor{LightBackground}
 1C & Turn Off \tn
-% Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
 2C & Next Mode\tn
-% Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
 1H & Increase Brightness/Strobe \tn
-% Row Count 3 (+ 1)
 % Row 3
 \SetRowColor{white}
 2H & Decrease Brightness/Strobe \tn
-% Row Count 4 (+ 1)
 % Row 4
 \SetRowColor{LightBackground}
 5C & Momentary Mode \tn
-% Row Count 5 (+ 1)
+% Row 5
 \hhline{>{\arrayrulecolor{DarkBackground}}--}
 \SetRowColor{LightBackground}
 \mymulticolumn{2}{x{5.41 cm}}{Candle -\textgreater{} Bike -\textgreater{} Party -\textgreater{} Tactical -\textgreater{} Lightning}  \tn
